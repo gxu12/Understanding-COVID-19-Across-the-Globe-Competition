@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>covid-19  Number of deaths in 2020</title>
+
+
+
+</head>
+<body>
+
+<!--header-->
+
+
+<!--main-->
+<div class="data_content">
+    <p  align="center"><img src="../static/img/10.jpg"></p>
+    <blockquote>
+		<h2>Epidemic Development Trend</h2>
+	<p>
+		This page mainly elaborates the epidemic information from three perspectives:<br>
+		1.Epidemic development trend,<br>
+    2.Infection trend,<br>
+    3.CPI index.
+    <br><br>
+    <font style="color:blue">As of 7 October 2020,<br></font>
+		<font style='color:red'>India, Brazil, Egypt, and Indonesia</font> are still on the rise<br>
+    <br>
+
+		The first chart uses the global map as a background,<br>
+		using a pie chart showing the number of infected people and their percentages.
+    <br>
+
+<br>As you can see from the chart, the worst-hit areas are In India and the least affected are in Indonesia.
+	</p>
+</blockquote>
+<blockquote>
+	<font style='font-weight:bold'>Plot Name: </font>Epidemic Development Trend
+	<small><cite title="Source Title">India,Brazil,Egypt and Egypt</cite></small>
+</blockquote>
+<center>
+<div id="main" style="width: 90%;height:900px;"></div>
+</center>
+
+
+<blockquote>
+		<h2>Death Versus Infected People</h2>
+	<p>
+		The chart shows the number of people infected and the number of people dying in four different countries,<br>
+		with line and pie charts showing the number of people infected and dying.<br>
+    <br>
+    <br>
+    As you can see, India currently has the highest number of infections,<br>
+		followed by Brazil, Egypt and Indonesia.
+    <br>
+    As you can see from the pie chart, <br>
+		India has the largest share. Therefore, <br>
+		India should take more measures to prevent and control the epidemic.
+
+
+
+	</p>
+</blockquote>
+<blockquote>
+	covid-19  Infection/Death in 2020
+	<small><cite title="Source Title">India,Brazil,Egypt and Egypt</cite></small>
+</blockquote>
+
+  <div id="main2" style="width: 80%;height:600px;"></div>
+
+
+
+</body>
+
+<script src="../static/js/jquery-3.5.0.min.js"></script>
+<script src="../static/echarts/dist/echarts.min.js"></script>
+<script src="../static/world.js"></script>
+
+
+<script>
+
+var myChart2 = echarts.init(document.getElementById("main2"));
+
+var myChart = echarts.init(document.getElementById("main"));
+var data=[
+  {
+    "time": 0924,
+    "data": [
+      {"name":"India","value":[5820000,30.222,"India"]},
+      {"name":"Brazil","value":[4560000,14.532,"Brazil"]},
+      {"name":"Indonesia","value":[262000,5.339,"Indonesia"]},
+      {"name":"Egypt","value":[103000,5.362,"Egypt"]}
+    ]
+  },
+  {
+    "time": 0925,
+    "data": [
+      {"name":"India","value":[5900000,29.332,"India"]},
+      {"name":"Brazil","value":[4590000,13.202,"Brazil"]},
+      {"name":"Indonesia","value":[267000,6.369,"Indonesia"]},
+      {"name":"Egypt","value":[103000,6.482,"Egypt"]}
+    ]
+  },
+  {
+    "time": 0926,
+    "data": [
+      {"name":"India","value":[5990000,32.434,"India"]},
+      {"name":"Brazil","value":[4630000,12.310,"Brazil"]},
+      {"name":"Indonesia","value":[271000,6.380,"Indonesia"]},
+      {"name":"Egypt","value":[103000,5.938,"Egypt"]}
+    ]
+  },
+  {
+    "time": 0927,
+    "data": [
+      {"name":"India","value":[6070000,33.533,"India"]},
+      {"name":"Brazil","value":[4680000,13.202,"Brazil"]},
+      {"name":"Indonesia","value":[275000,6.369,"Indonesia"]},
+      {"name":"Egypt","value":[103000,6.362,"Egypt"]}
+    ]
+  },
+  {
+    "time": 0928,
+    "data": [
+      {"name":"India","value":[6150000,32.720,"India"]},
+      {"name":"Brazil","value":[4710000,13.175,"Brazil"]},
+      {"name":"Indonesia","value":[279000,6.669,"Indonesia"]},
+      {"name":"Egypt","value":[103000,5.902,"Egypt"]}
+    ]
+  },
+  {
+    "time": 0929,
+    "data": [
+      {"name":"India","value":[6230000,33.732,"India"]},
+      {"name":"Brazil","value":[4750000,14.562,"Brazil"]},
+      {"name":"Indonesia","value":[282000,6.269,"Indonesia"]},
+      {"name":"Egypt","value":[103000,5.262,"Egypt"]}
+    ]
+  },
+  {
+    "time": 0930,
+    "data": [
+      {"name":"India","value":[6310000,30.122,"India"]},
+      {"name":"Brazil","value":[4810000,13.502,"Brazil"]},
+      {"name":"Indonesia","value":[284000,5.369,"Indonesia"]},
+      {"name":"Egypt","value":[103000,5.362,"Egypt"]}
+    ]
+  },
+  {
+    "time": 1001,
+    "data": [
+      {"name":"India","value":[6310000,31.222,"India"]},
+      {"name":"Brazil","value":[4810000,13.202,"Brazil"]},
+      {"name":"Indonesia","value":[287000,6.369,"Indonesia"]},
+      {"name":"Egypt","value":[103000,6.362,"Egypt"]}
+    ]
+  },
+  {
+    "time": 1002,
+    "data": [
+      {"name":"India", "value":[6390000,23.337,"India"]},
+      {"name":"Brazil","value":[4850000,9.027,"Brazil"]},
+      {"name":"Indonesia","value":[291000,7.923,"Indonesia"]},
+      {"name":"Egypt","value":[103111,6.253,"Egypt"]}
+    ]
+  },
+  {
+    "time": 1003,
+    "data": [
+      {"name":"India", "value":[6470000,25.921,"India"]},
+      {"name":"Brazil","value":[4880000,13.774,"Brazil"]},
+      {"name":"Indonesia","value":[295000,7.722,"Indonesia"]},
+      {"name":"Egypt","value":[103222,5.605,"Egypt"]}
+    ]
+  },
+  {
+    "time": 1004,
+    "data": [
+      {"name":"India", "value":[6550000,30.659,"India"]},
+      {"name":"Brazil","value":[4910000,14.456,"Brazil"]},
+      {"name":"Indonesia","value":[300000,5.843,"Indonesia"]},
+      {"name":"Egypt","value":[103333,4.575,"Egypt"]}
+    ]
+  },
+  {
+    "time": 1005,
+    "data": [
+      {"name":"India", "value":[6620000,22.679,"India"]},
+      {"name":"Brazil","value":[4920000,9.360,"Brazil"]},
+      {"name":"Indonesia","value":[303000,8.632,"Indonesia"]},
+      {"name":"Egypt","value":[104123,5.200,"Egypt"]}
+    ]
+  },
+  {
+    "time": 1006,
+    "data": [
+      {"name":"India", "value":[6690000,23.208,"India"]},
+      {"name":"Brazil","value":[4930000,14.204,"Brazil"]},
+      {"name":"Indonesia","value":[307000,5.329,"Indonesia"]},
+      {"name":"Egypt","value":[104582,4.333,"Egypt"]}
+    ]
+  },
+  {
+    "time": 1007,
+    "data": [
+      {"name":"India", "value":[6760000,24.2,"India"]},
+      {"name":"Brazil","value":[4970000,16,"Brazil"]},
+      {"name":"Indonesia","value":[311000,5.9,"Indonesia"]},
+      {"name":"Egypt","value":[105000,4.7,"Egypt"]}
+    ]
+  }
+]
+
+const colorList = ["#9E87FF", '#73DDFF', '#fe9a8b','#fe1a8b', '#F56948', '#9E87FF']
+
+var option = {
+  baseOption: {
+    animationDurationUpdate: 1000,
+    animationEasingUpdate: 'quinticInOut',
+    timeline: {
+      axisType: 'category',
+      orient: 'vertical',
+      autoPlay: true,
+      inverse: true,
+      playInterval: 5000,
+      left: null,
+      right: 5,
+      top: 10,
+      bottom: 10,
+      width: 20,
+      height: null,
+      label: {
+        normal: {
+          textStyle: {
+            color: '#ddd'
+          }
+        },
+        emphasis: {
+          textStyle: {
+            color: '#fff'
+          }
+        }
+      },
+      symbol: 'none',
+      lineStyle: {
+        color: '#555'
+      },
+      checkpointStyle: {
+        color: '#bbb',
+        borderColor: '#777',
+        borderWidth: 1
+      },
+      controlStyle: {
+        showNextBtn: false,
+        showPrevBtn: false,
+        normal: {
+          color: '#666',
+          borderColor: '#666'
+        },
+        emphasis: {
+          color: '#aaa',
+          borderColor: '#aaa'
+        }
+      },
+      data: data.map(function(ele) {
+        return ele.time
+      })
+    },
+    backgroundColor: '#404a59',
+    title: {
+      text: 'covid-19 Flation in 2020',
+      subtext: 'India,Brazil,Egypt and Egypt',
+      left: 'center',
+      top: 'top',
+      textStyle: {
+        fontSize: 25,
+        color: 'rgba(255,255,255, 0.9)'
+      }
+    },
+    tooltip: {
+      formatter: function(params) {
+        if ('value' in params.data) {
+          return params.data.value[2] + ': ' + params.data.value[0];
+        }
+      }
+    },
+    grid: {
+      left: '12%',
+      right: '45%',
+      top: '70%',
+      bottom: 20
+    },
+    xAxis: {},
+    yAxis: {},
+    series: [
+      {
+        id: 'map',
+        type: 'map',
+        mapType: 'world',
+        top: '10%',
+        bottom: '25%',
+        left: 10,
+        itemStyle: {
+          normal: {
+            areaColor: '#323c48',
+            borderColor: '#404a59'
+          },
+          emphasis: {
+            label: {
+              show: true
+            },
+            areaColor: 'rgba(255,255,255, 0.5)'
+          }
+        },
+        data: []
+      }, {
+        id: 'bar',
+        type: 'bar',
+        tooltip: {
+          show: false
+        },
+        label: {
+          normal: {
+            show: true,
+            position: 'right',
+            textStyle: {
+              color: '#ddd'
+            }
+          }
+        },
+        data: []
+      }, {
+        id: 'pie',
+        type: 'pie',
+        radius: ['8%', '20%'],
+        center: ['75%', '85%'],
+        roseType: 'radius',
+        tooltip: {
+          formatter: '{b} {d}%'
+        },
+        data: [],
+        label: {
+          normal: {
+            textStyle: {
+              color: '#ddd'
+            }
+          }
+        },
+        labelLine: {
+          normal: {
+            lineStyle: {
+              color: '#ddd'
+            }
+          }
+        },
+        itemStyle: {
+          normal: {
+            borderColor: 'rgba(0,0,0,0.3)',
+            borderSize: 1
+          }
+        }
+      }
+    ]
+  },
+  options: []
+}
+
+for (var i = 0; i < data.length; i++) {
+  //计算其余国家GDP
+  var restPercent = 100;
+  var restValue = 0;
+  data[i].data.forEach(function(ele) {
+    restPercent = restPercent - ele.value[1];
+  });
+  restValue = data[i].data[0].value[0] * (restPercent / data[i].data[0].value[1]);
+  console.log(restPercent);
+  console.log(restValue);
+  option.options.push({
+    visualMap: [{
+      dimension: 0,
+      left: 10,
+      itemWidth: 12,
+      min: data[i].data[3].value[0],
+      max: data[i].data[0].value[0],
+      text: ['High', 'Low'],
+      textStyle: {
+        color: '#ddd'
+      },
+      inRange: {
+        color: ['pink', 'yellow', 'orangered', 'blue','green']
+      }
+    }],
+    xAxis: {
+      type: 'value',
+      boundaryGap: [0, 0.1],
+      axisLabel: {
+        show: false,
+      }
+    },
+    yAxis: {
+      type: 'category',
+      axisLabel: {
+        textStyle: {
+          color: '#ddd'
+        }
+      },
+      data: data[i].data.map(function(ele) {
+        return ele.value[2]
+      })
+    },
+    series: [
+      {
+        id: 'map',
+        data: data[i].data
+      }, {
+        id: 'bar',
+        data: data[i].data.map(function(ele) {
+          return ele.value[0]
+        }).sort(function(a, b) {
+          return a <= b
+        })
+      }, {
+        id: 'pie',
+        data: data[i].data.map(function(ele) {
+          return {
+            name: ele.value[2],
+            value: ele.value
+          }
+        }).concat({
+          name: 'other country',
+          value: restValue
+        }),
+      }
+    ]
+  })
+}
+
+option2 = {
+    backgroundColor: "#363636",
+    color: ['#ffd285', '#ff733f'],
+
+    title: [{
+        text: 'covid-19  Infection/Death in Oct 1st 2020',
+        subtext: 'four countries',
+        left: '2%',
+        top: '3%',
+        textStyle: {
+            color: '#fff',
+            fontSize: 22
+        }
+    }, {
+        text: 'number of death in different country',
+        left: '77%',
+        top: '20%',
+        textAlign: 'center',
+        textStyle: {
+            color: '#fff',
+            fontSize: 22
+        }
+    }],
+    tooltip: {
+        trigger: 'axis'
+    },
+    legend: {
+        left: '15%',
+        bottom: '1%',
+        textStyle: {
+            color: '#fff',
+            fontSize: 15,
+            fontWeight: 'bold'
+        },
+        data: ['number', 'die for covid-19']
+    },
+    grid: {
+        left: '2.5%',
+        right: '30%',
+        top: '16%',
+        bottom: '8%',
+        containLabel: true
+    },
+    toolbox: {
+        "show": false,
+        feature: {
+            saveAsImage: {}
+        }
+    },
+    xAxis: {
+        type: 'category',
+        "axisLine": {
+            lineStyle: {
+                color: '#fff'
+            }
+        },
+        "axisTick": {
+            "show": false
+        },
+        axisLabel: {
+            textStyle: {
+                color: '#fff'
+            },
+            interval: 0,
+            rotate: -30,
+            margin: 15
+        },
+        boundaryGap: false,
+        data: ['India', 'Brazil','Egypt','Indonesia']
+    },
+    yAxis: {
+        "axisLine": {
+            symbol: ['none', 'arrow'],
+            lineStyle: {
+                type: 'dashed',
+                color: '#fff'
+            }
+        },
+        splitLine: {
+            show: true,
+            lineStyle: {
+                type: 'dashed',
+                color: '#6E7783'
+            }
+        },
+        "axisTick": {
+            "show": false
+        },
+        axisLabel: {
+            textStyle: {
+                color: '#fff'
+            }
+        },
+        type: 'value'
+    },
+    series: [{
+            name: 'Infection of  People',
+            smooth: true,
+            type: 'line',
+            symbolSize: 8,
+            symbol: 'circle',
+            data: [6835655, 5000694,315714.00,103781.00]
+        }, {
+            name: 'number of Death',
+            smooth: true,
+            type: 'line',
+            symbolSize: 8,
+            symbol: 'circle',
+            data: [105526, 148228,11253.00,5990.00]
+        },
+        {
+            type: 'pie',
+            center: ['80%', '50%'],
+            radius: ['28%', '38%'],
+            label: {
+                normal: {
+                    show: true,
+                    // position: 'center',
+                    formatter: '{text|{b}}',
+                    rich: {
+                        text: {
+                            color: "#fff",
+                            fontSize: 18,
+                            align: 'center',
+                            verticalAlign: 'middle',
+                            padding: 8
+                        },
+                    },
+                },
+                emphasis: {
+                    show: true,
+                    textStyle: {
+                        fontSize: 24,
+                    }
+
+                }
+            },
+            labelLine: {
+                show: true,
+                smooth: true,
+                length:30,
+                //length2:10,
+                lineStyle:{
+                    type:'dashed'
+                }
+            },
+            tooltip: {
+                trigger: 'item',
+                formatter: "{b}：{c}"
+            },
+            data: [{
+                name: 'India',
+                value:105526,
+                itemStyle: {
+                    color: 'red',
+                    borderColor: "#363636",
+                    borderWidth: 5
+                }
+            }, {
+                name: 'Brazil',
+                value: 148228,
+                itemStyle: {
+                    color: 'blue',
+                    borderColor: "#363636",
+                    borderWidth: 5
+                }
+            }, {
+                name: 'Egypt',
+                value: 11253,
+                itemStyle: {
+                    color: 'orange',
+                    borderColor: "#363636",
+                    borderWidth: 5
+                }
+            }, {
+                name: 'Indonesia',
+                value:5990,
+                itemStyle: {
+                    color: 'purple',
+                    borderColor: "#363636",
+                    borderWidth: 5
+                }
+            }]
+        }
+    ]
+}
+myChart2.setOption(option2);
+myChart.setOption(option);
+myChart3.setOption(option3);
+    window.addEventListener("resize", function () {
+        myChart.resize();
+    });
+
+// });
+</script>
+
+</html>

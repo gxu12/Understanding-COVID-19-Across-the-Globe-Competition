@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
+</script>
+    <title>covid19 2020 The unemployment rate</title>
+
+
+
+</head>
+<body>
+
+<!--header-->
+<style>
+h1 {text-align: center;}
+p {text-align: center;}
+div {text-align: center;}
+</style>
+
+<!--main-->
+<div class="data_content">
+  <p  align="center"><img src="../static/img/9.jpg"></p>
+    <h1>The unemployment rate</h1>
+
+
+	<h4>In today's outbreak, the first casualty is people's income,</h4>
+	<h4> important measure of people's income. As you can see from the chart below, we looked at the employment rates of people in four different countries from October 2019 to July 2020.
+
+We can clearly see that in the beginning, </h4>
+	<h4>Brazil and Indonesia had the highest unemployment rates, at 11.6 and 11.3, compared with India and Egypt, at 8.1 and 6.8.</h4>
+	<h4>
+
+With the outbreak of the epidemic, the unemployment rate in India increased sharply after March 2020 and peaked at 23.5 in April 2020, while Brazil, Indonesia and Egypt showed a trend of gradual increase.
+
+<br>
+<br>
+
+In India, unemployment has fallen sharply as the policy has been implemented. People can interact with the button above the icon to display and hide the corresponding national data.</h4>
+
+<h4 style='color:purple'>This graph of unemployment rates, combined with the policies on the previous page, <br>shows that it is because brazil and india are facing a very serious unemployment problem that the government has to recover lost workers by stimulating the economy, <br>which also results in not being able to govern the COVID-19 with full force.</h4>
+<br>
+<h4 style='color:blue'> All data is in percent(%)</h4>
+<center>
+<div id="main" style="width: 700px;height:700px;"></div>
+</center>
+</div>
+
+
+</body>
+
+<script src="../static/js/jquery-3.5.0.min.js"></script>
+<script src="../static/echarts/dist/echarts.min.js"></script>
+<script src="../static/world.js"></script>
+
+
+<script>
+
+
+var myChart = echarts.init(document.getElementById("main"));
+option = {
+    title: {
+        text: 'The unemployment rate(%)'
+    },
+    tooltip: {
+        trigger: 'axis'
+    },
+    legend: {
+        data: ['India', 'Brazil','Egypt','Indonesia']
+    },
+    grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+    },
+    toolbox: {
+        feature: {
+            saveAsImage: {}
+        }
+    },
+    xAxis: {
+		type: 'category',
+	    boundaryGap: false,
+		data: ['201910','201911','201912','202001','202002','202003','202004','202005','202006','202007'],
+		axisLabel: {
+			interval: 0,
+			textStyle: {
+				color: '#1B253A',
+				fontStyle: 'normal',
+				fontFamily: '微软雅黑',
+				fontSize: 12,
+			},
+			formatter:function(params) {
+                var newParamsName = "";
+                var paramsNameNumber = params.length;
+                var provideNumber = 4;  //一行显示几个字
+                var rowNumber = Math.ceil(paramsNameNumber / provideNumber);
+                if (paramsNameNumber > provideNumber) {
+                    for (var p = 0; p < rowNumber; p++) {
+                        var tempStr = "";
+                        var start = p * provideNumber;
+                        var end = start + provideNumber;
+                        if (p == rowNumber - 1) {
+                            tempStr = params.substring(start, paramsNameNumber);
+                        } else {
+                            tempStr = params.substring(start, end) + "\n";
+                        }
+                        newParamsName += tempStr;
+                    }
+
+                } else {
+                    newParamsName = params;
+                }
+                return newParamsName
+            },
+			//rotate:50,
+		},
+		axisTick:{
+			show: false,
+		},
+		axisLine:{
+			lineStyle:{
+				color:'#E5E9ED',
+				// opacity:0.2
+			}
+		},
+		splitLine: {
+			show: true,
+			lineStyle: {
+				color: '#E5E9ED',
+			// 	opacity:0.1
+			}
+		}
+    },
+    yAxis: [
+		{
+			type: 'value',
+			splitNumber: 5,
+			axisLabel: {
+				textStyle: {
+					color: '#a8aab0',
+					fontStyle: 'normal',
+					fontFamily: '微软雅黑',
+					fontSize: 12,
+				}
+			},
+			axisLine:{
+				show: false
+			},
+			axisTick:{
+				show: false
+			},
+			splitLine: {
+				show: true,
+				lineStyle: {
+					color: '#E5E9ED',
+				// 	opacity:0.1
+				}
+			}
+
+		}
+	],
+    series: [
+        {
+            name: 'India',
+            type: 'line',
+            itemStyle: {
+		        normal: {
+					color:'#3A84FF',
+		            lineStyle: {
+						color: "#3A84FF",
+						width:1
+		            },
+		            areaStyle: {
+						color: new echarts.graphic.LinearGradient(0, 1, 0, 0, [{
+							offset: 0,
+							color: 'rgba(158,32,255,0)'
+						}, {
+							offset: 1,
+							color: 'rgba(58,132,255,0.35)'
+						}]),
+		            }
+		        }
+			},
+            data: [ 8.1,7.2,7.6,7.2,7.8,8.8,23.5,21.7,10.2,7.4]
+        },
+        {
+            name: 'Brazil',
+            type: 'line',
+            itemStyle: {
+		        normal: {
+		            color:'rgba(255,80,124,1)',
+		            lineStyle: {
+						color: "rgba(255,80,124,1)",
+						width:1
+		            },
+		            areaStyle: {
+						color: new echarts.graphic.LinearGradient(0, 1, 0, 0, [{
+							offset: 0,
+							color: 'rgba(205,80,124,0)'
+						}, {
+							offset: 1,
+							color: 'rgba(55,80,14,0.35)'
+						}]),
+		            }
+		        }
+			},
+            data: [11.6,11.2,11,11.2,11.6,12.2,12.6,12.9,13.3,13.8]
+        },{
+            name: 'Egypt',
+            type: 'line',
+            itemStyle: {
+		        normal: {
+		            color:'rgba(195,120,99,1)',
+		            lineStyle: {
+						color: "rgba(195,120,99,1)",
+						width:1
+		            },
+		            areaStyle: {
+						color: new echarts.graphic.LinearGradient(0, 1, 0, 0, [{
+							offset: 0,
+							color: 'rgba(75,20,94,0)'
+						}, {
+							offset: 1,
+							color: 'rgba(195,120,99,0.35)'
+						}]),
+		            }
+		        }
+			},
+            data: [6.8,6.56,6.24,6.07,5.82,6.17,5.7,5.94,5.81,6.18]
+        },{
+            name: 'Indonesia',
+            type: 'line',
+            itemStyle: {
+		        normal: {
+		            color:'rgba(80,150,20,1)',
+		            lineStyle: {
+						color: "rgba(80,150,20,1)",
+						width:1
+		            },
+		            areaStyle: {
+						color: new echarts.graphic.LinearGradient(0, 1, 0, 0, [{
+							offset: 0,
+							color: 'rgba(80,180,20,0)'
+						}, {
+							offset: 1,
+							color: 'rgba(15,110,224,0.35)'
+						}]),
+		            }
+		        }
+			},
+            data: [11.3,10.6,9.9,10,8.9,8.1,7.5,7.8,8,7.7]
+        }
+    ]
+};
+
+
+myChart.setOption(option);
+
+    window.addEventListener("resize", function () {
+        myChart.resize();
+    });
+
+// });
+</script>
+
+</html>

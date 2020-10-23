@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>covid19 2020</title>
+	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
+</script>
+
+
+</head>
+<body>
+<style>
+<!--header-->
+h1 {text-align: center;}
+p {text-align: center;}
+div {text-align: center;}
+</style>
+<!--main-->
+<div class="data_content">
+  <p  align="center"><img src="../static/img/11.jpg" width="600" height="600"></p>
+    	 <blockquote>
+     <h1>The detail among four differnt countries</h1>
+    <h5>In today's outbreak, the first casualty is people's income,</h5>
+   <h5>  In the wake of the outbreak, the economies of governments have borne the brunt. Therefore, the analysis of the economic factors in each country is crucial to understand the country's economic recovery in the current epidemic environment.</h5>
+ <h5>The chart below visualizes the spending, tax, credit and military spending of each country using a stacked chart. Users can display and hide relevant country data by clicking a button at the top of the chart</h5>
+  <h4 style='color:purple'> all data is in US Dollars($)</h4>
+             </blockquote>
+<center>
+<div id="main" style="width: 700px;height:700px;"></div>
+</center>
+     <blockquote>
+          <h1>this chart illustration of expediture in different fields,</h1>
+
+         <h5>From the figure, we can see that there are a total of four aspects, and four aspects of data are compared from the two major countries.
+           <br>As you can see from the chart, Brazil has the highest consumer confidence. India has the highest personal disposable income</h5>
+
+<br>
+<h3 style="color:'red'">Definition:</h3>
+<b><font style="color:blue">Consumer Confidence Index:</font></b> defined as the degree of optimism on the state of the economy that consumers are expressing through their activities of savings and spending
+<br>
+<b><font style="color:blue">Consumer Spending($):</font></b>  the value of the goods and services purchased by
+<br>
+<b><font style="color:blue">Personal Disposable Income($):</font> </b>The amount that residents have left to spend or save after paying taxes
+<br>
+<b><font style="color:blue">Price of Petrol($): </font></b>price of gasoline
+<br>
+<br>
+
+  <center>
+    <div id="main2" style="width: 700px;height:700px;"></div>
+  </center>
+ </blockquote>
+
+</div>
+
+</body>
+
+<script src="../static/js/jquery-3.5.0.min.js"></script>
+<script src="../static/echarts/dist/echarts.min.js"></script>
+<script src="../static/world.js"></script>
+
+
+<script>
+
+var myChart2 = echarts.init(document.getElementById("main2"));
+var myChart = echarts.init(document.getElementById("main"));
+
+ option = {
+    tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+            type: 'shadow'
+        }
+    },
+    legend: {
+        data: ['Government spending', 'Government revenue', 'The credit rating', 'military']
+    },
+    grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+    },
+    xAxis: {
+        type: 'value'
+    },
+    yAxis: {
+        type: 'category',
+        data: ['Indonesia', 'Brazil', 'Egypt', 'India']
+    },
+    series: [
+        {
+            name: 'Government spending',
+            type: 'bar',
+            stack: 'Totally',
+            label: {
+                show: false,
+                position: 'insideRight'
+            },
+            data: [1088002928, 32090137200,7261377744, 66019941600]
+        },
+        {
+            name: 'Government revenue',
+            type: 'bar',
+            stack: 'Totally',
+            label: {
+                show: false,
+                position: 'insideRight'
+            },
+            data: [13471706621, 22195678230, 58341920635, 31585372800]
+        },
+        {
+            name: 'The credit rating',
+            type: 'bar',
+            stack: 'Totally',
+            label: {
+                show: false,
+                position: 'insideRight'
+            },
+            data: [56.00, 42.00, 60.00, 30.00]
+        },
+        {
+            name: 'military',
+            type: 'bar',
+            stack: 'Totally',
+            label: {
+                show: false,
+                position: 'insideRight'
+            },
+            data: [55820574, 522053048, 27660000000, 64559000000]
+        }
+    ]
+};
+ option2 = {
+    backgroundColor:'black',
+    "normal": {
+        "top": 200,
+        "left": 300,
+        "width": 500,
+        "height": 400,
+        "zIndex": 6,
+        "backgroundColor": ""
+    },
+    "color": ["rgba(245, 166, 35, 1)", "rgba(19, 173, 255, 1)"],
+    "title": {
+        "show": true,
+        "text": "illustration of expediture in different fields",
+        "left": "30%",
+        "top": "1%",
+        "textStyle": {
+            "fontSize": 18,
+            "color": "#fff",
+            "fontStyle": "normal",
+            "fontWeight": "normal"
+        }
+    },
+    "tooltip": {
+        "show": true,
+        "trigger": "item"
+    },
+    "legend": {
+        "show": true,
+        "icon": "circle",
+        "left": "35%",
+        "top": "90%",
+        "orient": "horizontal",
+        "textStyle": {
+            "fontSize": 14,
+            "color": "#fff"
+        },
+        "data": ["Consumer Confidence Index", "Consumer spending","Personal disposable income","The price of petrol"]
+    },
+    "radar": {
+        "center": ["50%", "50%"],
+        "radius": "70%",
+        "startAngle": 90,
+        "splitNumber": 4,
+        "shape": "circle",
+        "splitArea": {
+            "areaStyle": {
+                "color": ["transparent"]
+            }
+        },
+        "axisLabel": {
+            "show": false,
+            "fontSize": 18,
+            "color": "#fff",
+            "fontStyle": "normal",
+            "fontWeight": "normal"
+        },
+        "axisLine": {
+            "show": true,
+            "lineStyle": {
+                "color": "grey"//
+            }
+        },
+        "splitLine": {
+            "show": true,
+            "lineStyle": {
+                "color": "grey"//
+            }
+        },
+        "indicator": [{
+            "name": "Consumer Confidence Index",
+            "max": 14611.64
+        }, {
+            "name": "Consumer spending",
+            "max": 1386684
+        }, {
+            "name": "Personal disposable income",
+            "max": 206752290.00
+        },{
+            "name":"The price of petrol",
+            "max":1.11
+        }]
+    },
+    "series": [{
+        "name": "India",
+        "type": "radar",
+        "symbol": "circle",
+        "symbolSize": 10,
+        "areaStyle": {
+            "normal": {
+                "color": "rgba(111, 166, 145, 0.4)"
+            }
+        },
+        itemStyle:{
+            color:'rgba(245, 166, 35, 1)',
+            borderColor:'rgba(245, 166, 35, 0.3)',
+            borderWidth:10,
+        },
+        "lineStyle": {
+            "normal": {
+                "type": "dashed",
+
+                "color": "rgba(245, 166, 35, 1)",
+                "width": 2
+            }
+        },
+        "data": [
+            [9.00, 1002720.00, 206752290.00, 	1.11]
+        ]
+    }, {
+        "name": "Brazil",
+        "type": "radar",
+        "symbol": "circle",
+        "symbolSize": 10,
+        "itemStyle": {
+            "normal": {
+                color:'rgba(19, 173, 255, 1)',
+                "borderColor": "rgba(19, 173, 255, 0.4)",
+                "borderWidth": 10
+            }
+        },
+        "areaStyle": {
+            "normal": {
+                "color": "rgba(19, 173, 255, 0.5)"
+            }
+        },
+        "lineStyle": {
+            "normal": {
+                "color": "rgba(19, 173, 255, 1)",
+                "width": 2,
+                "type": "dashed"
+            }
+        },
+        "data": [
+            [14611.64,1002720.00 ,20672290.00, 0.81]
+        ]
+    },{
+        "name": "Egypt",
+        "type": "radar",
+        "symbol": "circle",
+        "symbolSize": 10,
+        "areaStyle": {
+            "normal": {
+                "color": "pink"
+            }
+        },
+        itemStyle:{
+            color:'pink',
+            borderColor:'green',
+            borderWidth:10,
+        },
+        "lineStyle": {
+            "normal": {
+                "type": "dashed",
+
+                "color": "pink",
+                "width": 2
+            }
+        },
+        "data": [
+            [11.00,  1162.00, 254062,	0.48]
+        ]
+    }, {
+        "name": "Indonesia",
+        "type": "radar",
+        "symbol": "circle",
+        "symbolSize": 10,
+        "areaStyle": {
+            "normal": {
+                "color": "purple"
+            }
+        },
+        itemStyle:{
+            color:'purple',
+            borderColor:'rgba(245, 166, 35, 0.3)',
+            borderWidth:10,
+        },
+        "lineStyle": {
+            "normal": {
+                "type": "dashed",
+
+                "color": "purple",
+                "width": 2
+            }
+        },
+        "data": [
+            [8.00, 1386684.00, 125482,	0.43]
+        ]
+    }, ]
+};
+
+    myChart2.setOption(option2);
+myChart.setOption(option);
+
+    window.addEventListener("resize", function () {
+        myChart.resize();
+    });
+
+// });
+</script>
+
+</html>

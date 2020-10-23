@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <script src="echarts.min.js"></script>
+    <title>covid19 2020</title>
+
+
+
+</head>
+<body>
+
+<!--header-->
+<style>
+h3 {text-align: center;}
+p {text-align: center;}
+div {text-align: center;}
+</style>
+
+<!--main-->
+<div class="data_content">
+
+
+   <h2 align="center">Business Confidence Index</h2>
+<p class="lead">
+
+</p>
+<p  align="center"><img src="../static/img/2.jpg",width="600" height="600"></p>
+ <blockquote>
+
+
+<em>The Business confidence Index, or BCI (Business Confidence Index), is a basic estimate of the state of the economy.</em><br>
+<p class="text-muted">A negative value suggests that most companies are not optimistic about their country's economic prospects.
+<p class="text-muted">Business confidence indices have generally been developed and applied in developed countries.
+
+</blockquote>
+<center>
+<div id="main" left:-10px ; style="width: 90%;height:800px;"></div>
+</center>
+<center>
+<div id="main2" style="width: 90%;height:800px;"></div>
+</center>
+
+
+
+
+<p class="text-muted">As can be seen from the figure,
+<p class="text-muted"> the Business confidence Index of four countries is listed, and the circle is used to show the size of the Index,with the size as the radius of the circle.</p>
+<p class="text-muted">It can be seen that Brazil is the highest at 102.9, followed by India at 99.5, and Egypt is the third, with a gap of about 38, and Indonesia is the smallest at 54.54.
+  <br>It can be seen that currently in Brazil, people have the highest information index on domestic,
+  <br>which drives external and internal investment, and consumers are very optimistic about the prospect of this country.</p>
+<p class="text-muted">It is worth noting that none of the four countries except India has a negative commercial consumption index due to the epidemic,
+  <br>which indicates that the epidemic prevention and control is relatively good.</p>
+
+<h3 style='color:blue'>Let us compare the policy strategies among these four countries to find the reason behind:</h3>
+
+<h3 style="color:blue"> The first plot is for policy response in India</h3>
+
+<b>In the beginning India brought the epidemic under control while enacting several restrictions, but the high intensity of the restrictions simultaneously led to a decline in the economy,
+  <br>so in May the Indian government enacted an economic stimulus, while easing entry restrictions in June.
+<br>
+<h4>However,</h4>
+It is not hard to find that the confirmed case is exponentially increasing around mid of June.
+This situation is closely related with the policy that easing the traveling restriction twice.</b>
+
+<br>
+<br>
+<center>
+<div id="main3" style="width: 70%;height:600px;"></div>
+</center>
+<br>
+
+<h3 style="color:blue"> The second plot is for policy response in Brazil</h3>
+
+<b>There are very many similarities between Brazil and India in this outbreak, such as the fact that they both have very high numbers of infections.
+
+<br>
+The graph below shows that the number of infections in Brazil also started in June.
+An analysis of Brazil's policies shows that at the beginning of the outbreak,
+<br>Brazil implemented many policies to stimulate the economy, but not many policies to restrict the outbreak, including not declaring a state of emergency,
+<br>and only in late July did the restrictions on entry into the country increase.</b>
+
+
+
+<br>
+<br>
+<center>
+<div id="main4" style="width: 70%;height:600px;"></div>
+</center>
+<br>
+<br>
+
+<h3 style="color:blue"> The third plot is for policy response in Indonesia</h3>
+
+<h3>Finally, we compare Brazil and India to indonesia with the highest growth in business confidence index.<h3>
+
+<b>
+Indonesia's policy on the epidemic has been much tougher than that of India-Brazil,
+<br>with policies from March until as recently as July aimed at restricting COVID-19 and even using the army and troops for social distance in late May.
+</b>
+<br>
+<br>
+<center>
+<div id="main5" style="width: 70%;height:600px;"></div>
+</center>
+
+
+
+</blockquote>
+
+
+</div>
+
+</body>
+
+<script src="../static/js/jquery-3.5.0.min.js"></script>
+<script src="../static/echarts/dist/echarts.min.js"></script>
+<script src="../static/world.js"></script>
+
+
+<script>
+
+
+var myChart = echarts.init(document.getElementById("main"));
+
+	var plantCap = [{
+	    name: 'India',
+	    value: '-60.2'
+	}, {
+	    name: 'Brazil',
+	    value: '95.23'
+	},  {
+	    name: 'Egypt',
+	    value: '85'
+	}, {
+	    name: 'Indonesia',
+	    value: '12.52'
+	}];
+
+	var datalist = [{
+	    offset: [50, 50],
+	    symbolSize: 250,
+	    opacity: .95,
+	    color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+	        offset: 0,
+	        color: '#29c0fb'
+	    }, {
+	        offset: 1,
+	        color: '#2dc5b9'
+	    }]),
+	}, {
+	    offset: [38, 90],
+	    symbolSize: 95,
+	    opacity: .95,
+	    color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+	        offset: 0,
+	        color: '#35d17e'
+	    }, {
+	        offset: 1,
+	        color: '#49ddb2'
+	    }]),
+	},{
+	    offset: [50, 70],
+	    symbolSize: 95,
+	    opacity: .95,
+	    color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+	        offset: 0,
+	        color: '#35d17e'
+	    }, {
+	        offset: 1,
+	        color: '#49ddb2'
+	    }]),
+	}, {
+	    offset: [23, 43],
+	    symbolSize: 90,
+	    opacity: .95,
+	    color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+	        offset: 0,
+	        color: '#e5d273'
+	    }, {
+	        offset: 1,
+	        color: '#e4a37f'
+	    }]),
+	}];
+	var datas = [];
+	for (var i = 0; i < plantCap.length; i++) {
+	    var item = plantCap[i];
+	    var itemToStyle = datalist[i];
+	    datas.push({
+	        name: item.name + '\n' + item.value,
+	        value: itemToStyle.offset,
+	        symbolSize: itemToStyle.symbolSize,
+	        label: {
+	            normal: {
+	                textStyle: {
+	                    fontSize: 18,
+	                    fontWeight: 800,
+	                    lineHeight: 22,
+	                }
+	            }
+	        },
+	        itemStyle: {
+	            normal: {
+	                color: itemToStyle.color,
+	                opacity: itemToStyle.opacity
+	            }
+	        },
+	    })
+	}
+	option = {
+	    backgroundColor: 'white',
+	    grid: {
+	        show: false,
+	        top: 8,
+	        bottom: 8
+	    },
+	    xAxis: [{
+	        gridIndex: 0,
+	        type: 'value',
+	        show: false,
+	        min: 0,
+	        max: 100,
+	        nameLocation: 'middle',
+	        nameGap: 5
+	    }],
+	    yAxis: [{
+	        gridIndex: 0,
+	        min: 0,
+	        show: false,
+	        max: 100,
+	        nameLocation: 'middle',
+	        nameGap: 30
+	    }],
+	    series: [{
+	        type: 'effectScatter',
+	        // symbol: 'circle',
+	        // symbolSize: 120,
+
+	        hoverAnimation: true,
+	        label: {
+	            normal: {
+	                show: true,
+	                formatter: '{b}',
+	                color: 'grey',
+	                textStyle: {
+	                    fontSize: '20'
+	                }
+	            },
+	        },
+	        itemStyle: {
+	            normal: {
+	                color: '#00acea'
+	            }
+	        },
+	        data: datas
+	    }]
+	};
+
+myChart.setOption(option);
+
+    window.addEventListener("resize", function () {
+        myChart.resize();
+    });
+
+var myChart2 = echarts.init(document.getElementById("main2"));
+
+var labelRight = {
+position: 'right'
+};
+option = {
+title: {
+  text: 'BCI for four countries between 2019 and 2020'
+},
+tooltip: {
+  trigger: 'axis',
+  axisPointer: {            // 坐标轴指示器，坐标轴触发有效
+      type: 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+  }
+},
+grid: {
+  top: 80,
+  bottom: 30
+},
+xAxis: {
+  type: 'value',
+  position: 'top',
+  splitLine: {
+      lineStyle: {
+          type: 'dashed'
+      }
+  }
+},
+yAxis: {
+  type: 'category',
+  axisLine: {show: false},
+  axisLabel: {show: false},
+  axisTick: {show: false},
+  splitLine: {show: false},
+  data: ['Indonesia in 2020 Q2', 'Indonesia in 2019 Q2', 'Brazil in 2020 Q2', 'Brazil in 2019 Q2', 'India in 2020 Q2', 'India in 2019 Q2', 'Egypt in 2020 Q2', 'Egypt in 2019 Q2']
+},
+series: [
+  {
+      name: 'BCI',
+      type: 'bar',
+      stack: 'Value',
+      label: {
+          show: true,
+          formatter: '{b}'
+      },
+      data: [
+        {
+                value: 12.52,
+                itemStyle: {color: 'LightSkyBlue'},
+            },
+            {
+                value: 0.52,
+                itemStyle: {color: 'LightSkyBlue'},
+            },
+            {
+                value: 95.23,
+                itemStyle: {color: 'BlueViolet'},
+            },
+            {
+                value: 99.82,
+                itemStyle: {color: 'BlueViolet'},
+            },
+            {
+                value: -60.2,
+                itemStyle: {color: 'Coral'},
+            },
+            {
+                value: 30.23,
+                itemStyle: {color: 'Coral'},
+            },
+            {
+                value: 85,
+                itemStyle: {color: 'Olive'},
+            },
+            {
+                value: 84,
+                itemStyle: {color: 'Olive'},
+            }
+      ],
+      }
+]
+}
+
+myChart2.setOption(option);
+
+    window.addEventListener("resize", function () {
+        myChart2.resize();
+    });
+
+var myChart3 = echarts.init(document.getElementById("main3"));
+
+option2 = {
+title: {
+text: 'Main Policy Responses from India with timeline and infection number'
+
+},
+
+
+tooltip: {
+trigger: 'axis',
+
+formatter: function (params, ticket, callback) {
+  var htmlStr = '';
+  var map = {};
+map['2020-03-24'] = 'Policy: Lock Down';
+map['2020-03-26'] = 'Policy: Announces $22 billion bailout plan';
+map['2020-04-01'] = 'Policy: Forced to wear face mask outside';
+map['2020-04-04'] = 'Policy: Export of hydroxychloroquine is prohibited';
+map['2020-05-15'] = 'Policy: $260 billion bailout package announced';
+map['2020-06-01'] = 'Policy: Easing of entry restrictions';
+map['2020-08-02'] = 'Policy: Further easing of entry restrictions';
+map['2020-09-13'] = 'Policy: Second Lock Down';
+/*按照日期添加，X日，对应Y的政策*/
+
+  for(var i=0;i<1;i++){
+  var param = params[i];
+  var xName = map[param.name];
+  var seriesName = param.seriesName;
+  var value = param.value;
+  var color = param.color;
+
+  if(i===0){
+    htmlStr += xName + '<br/>';
+  }
+  htmlStr +='<div>';
+
+
+
+
+  htmlStr += param.name + '：' + value + ' people';//周几+感染几个
+
+
+
+  htmlStr += '</div>';
+  }
+  return htmlStr;
+ }
+},
+grid : {
+    left: '10%',
+    top:100,
+    right : '5%',
+    bottom : 60
+},
+
+xAxis: {
+name:"India's Policy Response Timeline",
+nameLocation:'middle',
+nameTextStyle:{lineHeight:56,color:'purple',fontWeight:'bold'},
+type: 'category',
+boundaryGap: false,
+data: ['2020-03-24','2020-03-26','2020-04-01','2020-04-04','2020-05-15','2020-06-01','2020-08-02','2020-09-13']//日期
+},
+yAxis: {
+name:'Infection People',
+type: 'value'
+},
+series: [{
+name: 'India',
+type: 'line',
+smooth: true,
+data: [606, 724, 1970,3370,85900,199000,1800000,4850000]//每日数据，当前3天
+}]
+};
+
+myChart3.setOption(option2);
+
+        window.addEventListener("resize", function () {
+            myChart3.resize();
+        });
+
+var myChart5 = echarts.init(document.getElementById("main5"));
+
+        option4 = {
+        title: {
+        text: 'Main Policy Responses from Indonesia with timeline and infection number'
+
+        },
+
+
+        tooltip: {
+        trigger: 'axis',
+
+        formatter: function (params, ticket, callback) {
+          var htmlStr = '';
+          var map = {};
+        map['2020-03-23'] = "Policy: Conversion of hotel to emergency ward";
+        map['2020-03-24'] = 'Policy: Enforcement of the curfew'
+        map['2020-03-30'] = 'Policy: State of emergency';
+        map['2020-03-31'] = 'Policy: Establishment of the covid-19 task force.';
+        map['2020-04-05'] = 'Policy: Release 4.05 lakh crore stimulus package announced';
+        map['2020-05-26'] = 'Policy: Large-scale social restrictions imposed by the police and army';
+        map['2020-06-27'] = 'Policy: Economic stimulus package released';
+        map['2020-08-28'] = 'Policy: Extending Traveling Restriction';
+        /*按照日期添加，X日，对应Y的政策*/
+
+          for(var i=0;i<1;i++){
+          var param = params[i];
+          var xName = map[param.name];
+          var seriesName = param.seriesName;
+          var value = param.value;
+          var color = param.color;
+
+          if(i===0){
+            htmlStr += xName + '<br/>';
+          }
+          htmlStr +='<div>';
+
+
+
+
+          htmlStr += param.name + '：' + value + ' people';//周几+感染几个
+
+
+
+          htmlStr += '</div>';
+          }
+          return htmlStr;
+         }
+        },
+        grid : {
+            left: '10%',
+            top:100,
+            right : '5%',
+            bottom : 60
+        },
+
+        xAxis: {
+        name:"Indonesia's Policy Resposne Timeline",
+        nameLocation:'middle',
+        nameTextStyle:{lineHeight:56,color:'purple',fontWeight:'bold'},
+        type: 'category',
+        boundaryGap: false,
+        data: ['2020-03-23','2020-03-24','2020-03-30','2020-03-31','2020-04-05','2020-05-26','2020-06-27','2020-08-28']//日期
+        },
+        yAxis: {
+        name:'Infection People',
+        type: 'value'
+        },
+        series: [{
+        name: 'India',
+        type: 'line',
+        lineStyle: {color: 'blue'},
+        smooth: true,
+        data: [579, 790, 1410,1680,2490,2390,52800,166000]//每日数据，当前3天
+        }]
+        };
+        myChart5.setOption(option4);
+
+                window.addEventListener("resize", function () {
+                    myChart5.resize();
+                });
+
+var myChart4 = echarts.init(document.getElementById("main4"));
+
+                        option3 = {
+                        title: {
+                        text: 'Main Policy Responses from Brazil with timeline and infection number'
+
+                        },
+
+
+                        tooltip: {
+                        trigger: 'axis',
+
+                        formatter: function (params, ticket, callback) {
+                          var htmlStr = '';
+                          var map = {};
+                        map['2020-03-18'] = "Policy: Brazil's Central Bank cuts benchmark interest rate to a record low of 3.75%";
+                        map['2020-03-23'] = 'Policy: Work Remotely'
+                        map['2020-03-26'] = 'Policy: Overdraft rate reduced to 2.9%';
+                        map['2020-03-27'] = 'Policy: Economic stimulus package reaches $150 billion';
+                        map['2020-06-02'] = 'Policy: Launch of the SineSaúde system to help communication between health units';
+                        map['2020-07-01'] = 'Policy: $101.6 billion in special credits to citizens.';
+                        map['2020-07-09'] = 'Policy: Diagnosed by the President of Brazil';
+                        map['2020-09-24'] = 'Policy: Easing Traveling Restriction';
+                        /*按照日期添加，X日，对应Y的政策*/
+
+                          for(var i=0;i<1;i++){
+                          var param = params[i];
+                          var xName = map[param.name];
+                          var seriesName = param.seriesName;
+                          var value = param.value;
+                          var color = param.color;
+
+                          if(i===0){
+                            htmlStr += xName + '<br/>';
+                          }
+                          htmlStr +='<div>';
+
+
+
+
+                          htmlStr += param.name + '：' + value + ' people';//周几+感染几个
+
+
+
+                          htmlStr += '</div>';
+                          }
+                          return htmlStr;
+                         }
+                        },
+                        grid : {
+                            left: '10%',
+                            top:100,
+                            right : '5%',
+                            bottom : 60
+                        },
+
+                        xAxis: {
+                        name:'Brazil Policy Response Timeline',
+                        nameLocation:'middle',
+                        nameTextStyle:{lineHeight:56,color:'purple',fontWeight:'bold'},
+                        type: 'category',
+                        boundaryGap: false,
+                        data: ['2020-03-18','2020-03-23','2020-03-26','2020-03-27','2020-06-02','2020-07-01','2020-07-09','2020-09-24']//日期
+                        },
+                        yAxis: {
+                        name:'Infection People',
+                        type: 'value'
+                        },
+                        series: [{
+                        name: 'India',
+                        type: 'line',
+                        lineStyle: {color: 'orange'},
+                        smooth: true,
+                        data: [621, 2200, 3420,3900,584000,1500000,1800000,4690000]//每日数据，当前3天
+                        }]
+                        };
+
+                        myChart4.setOption(option3);
+
+                                window.addEventListener("resize", function () {
+                                    myChart4.resize();
+                                });
+
+// });
+</script>
+
+</html>
